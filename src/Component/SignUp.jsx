@@ -1,27 +1,20 @@
-
 import React, { useState } from 'react';
-import 'tailwindcss/tailwind.css'; 
-
+import 'tailwindcss/tailwind.css';
 
 const LoginPage = () => {
-  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  
   const handleLogin = (e) => {
     e.preventDefault();
 
-
     console.log('Username:', username);
     console.log('Password:', password);
-
-    
   };
 
   return (
     <div className="bg-black text-white min-h-screen flex items-center justify-center">
-      <div className="w-96">
+      <div className="w-full sm:w-96 bg-black text-white p-8 rounded-md shadow-md">
         <h2 className="text-2xl font-bold mb-4">Login Page</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
@@ -33,7 +26,7 @@ const LoginPage = () => {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="mt-1 p-2 w-full border rounded-md"
+              className="mt-1 p-2 w-full border rounded-md bg-gray-800 text-white"
             />
           </div>
           <div className="mb-4">
@@ -45,7 +38,7 @@ const LoginPage = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 p-2 w-full border rounded-md"
+              className="mt-1 p-2 w-full border rounded-md bg-gray-800 text-white"
             />
           </div>
           <div>
